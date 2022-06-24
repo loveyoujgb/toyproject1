@@ -16,5 +16,6 @@ certifi
 pymongo            
 python-dotenv      
 requests    
-bs4      
+bs4   
+dnspython   
 ```
