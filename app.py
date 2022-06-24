@@ -8,6 +8,7 @@ import os
 load_dotenv()
 app = Flask(__name__)
 
+load_dotenv()
 MONGODB_URL = os.getenv('MONGODB_URL')
 
 ca = certifi.where()
