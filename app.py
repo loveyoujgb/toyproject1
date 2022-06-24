@@ -5,13 +5,14 @@ from pymongo import MongoClient
 import certifi
 from dotenv import load_dotenv
 import os
-
+load_dotenv()
 app = Flask(__name__)
 
 MONGODB_URL = os.getenv('MONGODB_URL')
 
 ca = certifi.where()
 client = MongoClient(MONGODB_URL, tlsCAFile=ca)
+
 db = client.toyprojectdb
 
 @app.route('/')
