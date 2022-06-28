@@ -16,6 +16,26 @@ $(document).ready(() => {
 /* CLOCK -------------------------------------------------------------------- */
 
 /* TODOLIST ----------------------------------------------------------------- */
+/* TODO POPUP --------------------------------------------------------------- */
+// 팝업열기
+$('.todo-list-a').on('click', function (e) {
+  e.preventDefault();
+  if ($(this).is('.todo-done')) {
+    $('#edit-input').attr('placeholder', '');
+    $('.modify-num').val('');
+  }
+  $('.todo-pop').css('visibility', 'visible');
+  modifyResultTF = false;
+});
+// 팝업닫기
+$('.todo-pop-container').on('click', function (e) {
+  if (e.target === e.currentTarget) {
+    $('.todo-pop').css('visibility', 'hidden');
+    if (modifyResultTF) {
+      window.location.reload();
+    }
+  }
+});
 
 /* QUOTE -------------------------------------------------------------------- */
 
