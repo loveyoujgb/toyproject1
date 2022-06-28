@@ -39,8 +39,43 @@
       <h2>CLOCK</h2>
     </div>
     <!-- TODOLIST -------------------------------------------------------------- -->
-    <div>
-      <h2>TODOLIST</h2>
+    <div class="wrap">
+        <h2>TODOLIST</h2>
+        <div id="main">
+            <section id="section01">
+                <div class="todo-list-box">
+                    <ul class="todo-list-ul">
+<!--                        <li><a href="#" class="todo-done">눕기</a></li>-->
+<!--                        <li><a href="#">러닝</a></li>-->
+                    </ul>
+                </div>
+            </section>
+
+            <section id="section02">
+                <div class="todo-input-div">
+                    <div class="todo-input-box">
+                        <label for="todo-input">What is your main focus for today?</label>
+                        <div class="name-div">
+                            <input type="text" id="user-name" maxlength="10" placeholder="Please enter your name." value=""/>
+                            <button id="name-enter">이름엔터</button>
+                        </div>
+                        <div class="todo-div">
+                            <input type="text" id="todo-input" class="input-list" maxlength="30" placeholder="Enter Your To-do List(10 ~ 30)"/>
+                            <button id="todo-enter">Enter</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section03">
+                <div class="weather">
+                    <div class="weather-box">
+                        <span>&deg;C</span>
+                        <p></p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
     <!-- QUOTE ----------------------------------------------------------------- -->
     <div>
