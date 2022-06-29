@@ -11,6 +11,28 @@ $(document).ready(() => {
 
 /* BACKGROUND --------------------------------------------------------------- */
 
+const body = document.querySelector("body");
+
+const IMG_NUMBER = 29;
+
+function paintImage(imgNumber) {
+  const image = new Image();
+  image.src = `./static/images/${imgNumber + 1}.jpg`;
+  image.classList.add("bgImage");
+  body.prepend(image);
+}
+
+function getRandom() {
+  const number = Math.floor(Math.random() * IMG_NUMBER);
+  return number;
+}
+
+function init() {
+  const randomNumber = getRandom();
+  paintImage(randomNumber);
+}
+
+init();
 /* WEATHER ------------------------------------------------------------------ */
 // 위도, 경도를 알아 내는 함수
 function onGeoSucess(position){
@@ -66,6 +88,26 @@ setInterval(getClock,1000);
 
 
 /* TODOLIST ----------------------------------------------------------------- */
+/* TODO POPUP --------------------------------------------------------------- */
+// 팝업열기
+$('.todo-list-a').on('click', function (e) {
+  e.preventDefault();
+  if ($(this).is('.todo-done')) {
+    $('#edit-input').attr('placeholder', '');
+    $('.modify-num').val('');
+  }
+  $('.todo-pop').css('visibility', 'visible');
+  modifyResultTF = false;
+});
+// 팝업닫기
+$('.todo-pop-container').on('click', function (e) {
+  if (e.target === e.currentTarget) {
+    $('.todo-pop').css('visibility', 'hidden');
+    if (modifyResultTF) {
+      window.location.reload();
+    }
+  }
+});
 
 /* QUOTE -------------------------------------------------------------------- */
 
